@@ -1,0 +1,249 @@
+/* ------------------------------------------------------------ */
+/* [CSS] - header.css ( default )
+/* ------------------------------------------------------------ */
+/* > header 
+/* > header anker panel  
+/* ------------------------------------------------------------ */
+
+
+/* ------------------------------------------------------------- */
+/* Header ( default )
+/* ------------------------------------------------------------- */
+/* [i]: in root-body.css we have the layout, so we need relative */
+
+
+header {
+
+    position: relative;
+    top:0;
+
+    color: var(--white);
+
+    /* default is 0 , deepest layer is -1, we say 11
+    /* because to be save for more layers to be the topest */
+    z-index: 11;
+ 
+}
+
+
+/* ------------------------------------------------------------- */
+/* Header Layout ( fixed, grid  )   
+/* ------------------------------------------------------------- */
+
+#header-layout { 
+
+    position: fixed;
+    left:0;
+    right: 0;
+
+    display: grid;
+    grid: 4em calc(.1vw + .2em) 3.3em / 100%;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------- */
+/* Head - Header Container 
+/* ------------------------------------------------------------- */
+
+#head-index-header {
+
+    background-color: var(--black);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-left: calc(.1vw + .6em);
+    padding-right: calc(.1vw + .6em);
+}
+
+
+.svg-company-logo {
+
+    width: calc(.3vw + 2em);
+}
+
+
+#header-company-title { font-weight: bold; }
+
+#header-company-sub-title { color: var(--skin-brown); }
+
+#header-company-title , 
+#header-company-sub-title {
+
+    font-size: calc(.1vw + .9em );
+}
+
+
+#header-contactus-title { display: none; font-size: calc(.1vw + .9em ); }
+
+/* default unshown black email svg */
+a[href="#anker-contactus"] > img:nth-of-type(2) { display: none; }
+
+
+.svg-contactus-email {
+
+    width: calc(.1vw + 2em);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------- */
+/* Content Scroll Bar Container ( relative - absolute )
+/* ------------------------------------------------------------- */
+
+#scroll-content-bar {
+
+    position: relative;
+    top:0;
+
+    background-color: var(--skin-brown);
+}
+
+
+/* only useful for java script scrolling content */
+#scroll-loading-bar {
+
+    position: absolute;
+    top:0;
+
+    background-color: var(--css-blue);
+
+    width: 0%;
+    height: calc(.1vw + .2em);
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------- */
+/*  Anker - Nav Content Container
+/* ------------------------------------------------------------- */
+
+#anker-index-panel {
+
+    background-color: var(--black);
+
+
+    display: flex;
+    column-gap: calc(.1vw + .4em);
+    align-items: center;
+
+    padding-left: calc(.1vw + .4em);
+    padding-right: calc(.1vw + .4em);
+
+}
+
+
+#anker-index-arrow-panel { 
+    
+    display: none;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+
+
+#anker-index-panel a , 
+a[href="#anker-contactus"] { 
+
+    text-decoration: none;
+    color:var(--white);
+    font-weight: bold;
+}
+
+a[href="#anker-contactus"] { 
+
+    padding:calc(.1vw + .5em);
+}
+
+#anker-index-panel a {
+
+    padding: calc(.1vw + .3em);
+   
+    /* for smaller textes to bring 
+    /* same height for hover */
+
+    height: calc(.1vw + 2.3em);
+    
+    display: flex;
+    align-items: center;
+}
+
+#anker-index-panel a:visited, 
+a[href="#anker-contactus"]:visited { color:var(--white) }
+
+
+#anker-index-panel a:hover,
+a[href="#anker-contactus"]:hover {
+
+    transition: .3s;
+    background-color: var(--skin-brown);
+    color: var(--black);
+  
+}
+
+/* unshown white email svg */
+a[href="#anker-contactus"]:hover img:nth-of-type(1) {
+
+    display: none;
+}
+
+/* show black email svg */
+a[href="#anker-contactus"]:hover img:nth-of-type(2) {
+
+    display: block;
+}
+
+
+/* ------------------------------------------------- */
+/* Anker Link Jump Distance ( jumping poits )
+/* ------------------------------------------------- */
+
+#anker-contactus , 
+#anker-aboutus , 
+#anker-itservices , 
+#anker-itsolutions , 
+#anker-products {
+
+    scroll-margin-top: calc( 7.5em + .2vw);
+   
+}
+

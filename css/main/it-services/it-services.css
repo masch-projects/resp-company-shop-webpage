@@ -1,0 +1,125 @@
+/* ------------------------------------------------------- */
+/* [CSS] - it-services.css
+/* ------------------------------------------------------- */
+/* > grid layout with order arts
+/* ------------------------------------------------------- */
+
+
+
+/* --------------------------------------------------------- */
+/*  IT - Services - Layout    
+/* --------------------------------------------------------- */
+
+/* default img for layout styling */
+
+
+#it-services-layout {
+
+    padding-top: calc(.1vw + 3.5em);
+    padding-bottom: calc(.1vw + 3.5em);
+
+    display: grid;
+    row-gap: calc(.1vw + 4.5em );
+}
+
+
+
+
+
+
+/* --------------------------------------------------------- */
+/* IT - Services - Container 
+/* --------------------------------------------------------- */
+
+#it-services-layout > div {
+
+    position: relative;
+    top:0;
+
+    display: grid;
+    row-gap: calc(.1vw + .8em );
+}
+
+/* ---------------------------------- */
+/* Link Button - Order                */
+/* ---------------------------------- */
+
+a.it-service-link {
+
+    text-decoration: none;
+    color:var(--white);
+    font-weight: bold;
+}
+
+a.it-service-link:visited { color: var(--white); }
+
+
+
+a.it-service-link {
+
+    position: absolute;
+    right: 0;
+    bottom: -2em;
+
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: calc(.1vw + 5em);
+
+    padding: calc(.1vw + .5em);
+    background-color: var(--moon-dark);
+}
+
+.svg-tab-link {
+
+    width: calc(.1vw + 1em );
+    padding-bottom: .1em;
+}
+
+a.it-service-link > img:nth-of-type(2) {
+
+    display: none;
+}
+
+
+a.it-service-link:hover {
+
+    transition: .3s;
+    background-color: var(--skin-brown);
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, .8);
+    color:var(--black);
+}
+
+a.it-service-link:hover > img:nth-of-type(1) {
+
+    display: none;
+}
+
+a.it-service-link:hover > img:nth-of-type(2) {
+
+    display: block;
+}
+
+/* ---------------------------------- */
+/* Info - List                        */
+/* ---------------------------------- */
+
+ul.info-list {
+
+    font-weight: bold;
+}
+
+
+
+
+/* ---------------------------------- */
+/* Images                             */
+/* ---------------------------------- */
+
+
+.webp-itservices { 
+
+    width: 100%;
+
+}

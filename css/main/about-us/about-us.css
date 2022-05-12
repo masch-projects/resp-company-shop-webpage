@@ -1,0 +1,327 @@
+/* ------------------------------------------------------------ */
+/* [CSS] - about-us.css ( index main row layout )
+/* ------------------------------------------------------------ */
+/* defines the layout of index row main abot us
+/* ------------------------------------------------------------ */
+
+
+/* ------------------------------------------------------- */
+/* [1.0] - About us Intro Container
+/* ------------------------------------------------------- */
+
+#about-us-intro-container { 
+
+    /* default is grid for mobile , and reaching desktop
+    /* only get block for floating desktop version */
+    display: grid;  
+   
+}
+
+
+/* change order pos of the grid elements */
+#about-us-intro-container > div:nth-of-type( n + 2 ), 
+#about-us-intro-container ul {
+
+    /* last order pos of grid */
+    order:2;
+}
+
+
+
+
+/* ------------------------------------------------------- */
+/* [1.1] - Figure About us
+/* ------------------------------------------------------- */
+
+.about-us-figure {
+
+    /* parent pos for layouts container inside */
+    position: relative;
+    top:0;
+
+    
+
+    /* by jumping in style it goes by z-index: 0 ,
+    /* nothing is checkable , so should be higher */
+    z-index: 1;
+
+    /* delete default figure sets */
+    margin:0;
+   
+    /* layout order to change pos */
+    /* default is 0, 0 no order change */
+    /* 1 means go at the end, because other 
+    /* are 0 */
+    order: 1;
+
+   
+    
+    /* parent width for img & video */
+    width: 100%;
+
+  
+}
+
+
+
+/* ---------------------------------- */
+/* [1.2] - IMG & Video ( default )
+/* ---------------------------------- */
+
+.img-headquarter, 
+ .about-us-figure video {
+
+    margin-top: 1em;
+
+    transition: .6s;
+    opacity: 1;
+
+    width: 100%;
+
+    border-radius: 1em;
+    box-shadow: 0px 3px 3px 3px var(--black);
+}
+
+/* ---------------------------------- */
+/* [1.2] - Video
+/* ---------------------------------- */
+
+.about-us-figure video {
+
+    /* go over headquarter img */
+    position: absolute;
+    top:0;
+    left:0;
+
+    /* default unshown */
+    visibility: hidden;
+    opacity: 0;
+    
+    /* never scale up to be larger than its original size */
+    max-width: 100%;
+  
+}
+
+
+/* ---------------------------------- */
+/* [1.3] - Radioboxes (1,2)
+/* ---------------------------------- */
+
+/* default unshown radio icons */
+input#radio-img-headquarter , 
+input#radio-video-headquarter
+{ display: none;}
+
+#radio-panel-about-us { 
+
+    display: flex;
+    column-gap: calc(.1vw + .4em);
+    
+}
+
+#radio-panel-about-us label {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--skin-brown);
+    border: calc(.1vw + .15em) solid var(--black);
+
+    width: calc(.1vw + 1.5em);
+    height: calc(.1vw + 1.5em);
+ 
+}
+
+/* --------------------------------------- */
+/* Radio hover & checked                   */
+/* --------------------------------------- */
+
+#radio-panel-about-us label:hover, 
+ input#radio-img-headquarter:checked ~ #about-us-intro-container .about-us-figure label[for="radio-img-headquarter"],
+ input#radio-video-headquarter:checked ~ #about-us-intro-container .about-us-figure label[for="radio-video-headquarter"] {
+
+    transition: .3s;
+    background-color: var(--black);
+    color: var(--white);
+    cursor: pointer;
+}
+
+
+/* ----------------------------------------------------------- */
+/* Radio Checked Handling ( Image & Video )
+/* ------------------------------------------------------------ */
+
+/* img swipe out  */
+input#radio-video-headquarter:checked ~ #about-us-intro-container > .about-us-figure > img { 
+
+    opacity: 0;
+    visibility: hidden;   
+}
+
+/* video swipe in */
+input#radio-video-headquarter:checked ~ #about-us-intro-container > .about-us-figure > video { 
+
+    visibility: visible;
+    opacity: 1;
+
+}
+
+
+
+/* ---------------------------------- */
+/* [1.4] - Figcaption
+/* ---------------------------------- */
+
+#about-us-figcaption {
+
+    display: flex;
+    justify-content: space-between;
+
+  
+    text-align: right;
+    font-size: calc(.1vw + .7em);
+    font-weight: bold;
+
+    /* empty distance between media & figc. */
+   
+
+    padding-left: calc(.1vw + .4em);
+    padding-right: calc(.1vw + .4em);
+    padding-top: calc(.1vw + 1.3em);
+    padding-bottom: calc(.1vw + .8em);
+   
+   
+
+}
+
+
+#about-us-figcaption-title > div:nth-of-type(1) { 
+
+    background-color: var(--skin-brown);
+    padding-left: calc(.1vw + .6em);
+    padding-right: calc(.1vw + .4em);
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------- */
+/* [2.0] - About Us - Built Container
+/* ------------------------------------------------------- */
+
+
+
+#about-us-build-container { 
+
+    position: relative;
+    top:0;
+
+    padding-top: calc(.1vw + 1.5em);
+    margin-bottom: calc(.1vw + 1.5em);
+   
+}
+
+.built-stack-layout {
+
+    display: flex;
+
+    margin-top: calc(.1vw + 1.5em);
+    
+
+}
+
+.img-built-stack-container {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: calc(.1vw + 3em);
+
+    background-color: var(--moon-dark);
+}
+
+
+.img-built-stack {
+
+    width: calc(.1vw + 1em);
+}
+
+
+.built-stack-layout > div:last-child {
+
+    width: calc(.1vw + 20em );
+
+    padding: calc(.1vw + .8em);
+    background-color: var(--skin-brown);
+}
+
+
+
+
+
+
+/* ------------------------------------------------------- */
+/* [3.0] - About us - Working Togehter Container
+/* ------------------------------------------------------- */
+
+#about-us-work-together-container {
+
+   background-color: var(--moon-dark);
+   color:var(--white);
+
+   padding: calc(.1vw + .8em);
+}
+
+
+
+/* ------------------------------------ */
+/* Text work togehter 
+/* ------------------------------------ */
+
+#about-us-work-together-text { 
+
+    padding-top: calc(.1vw + 1em);
+    padding-bottom: 1em;
+    
+    float:left;
+   
+}
+
+/* ------------------------------------ */
+/* Image Container 
+/* ------------------------------------ */
+
+#about-us-technology-images {
+
+   text-align: center;
+   margin-top: calc( (.1vw + .7em) * (-1) );
+
+  
+ 
+}
+
+/* ------------------------------------ */
+/* Default Img Size of webtech icons 
+/* ------------------------------------ */
+
+.webp-technology-logo {
+
+    width: calc(.3vw + 3em);
+    padding: calc(.1vw + .8em);
+  
+}
+
+

@@ -1,0 +1,219 @@
+/* --------------------------------------------------------------------------- */
+/* [Resp-CSS] - responsive-index.css 
+/* --------------------------------------------------------------------------- */
+/* Resp. Handling on default scaling index page for mobile , tablet & desktop
+/* --------------------------------------------------------------------------- */
+/* [ >= 460px ]
+/* > header anker panel flex items no fixed height , height auto
+/* > show arrow of header anker panel & more left distance p-l.
+
+/* [ >= 680px & <= 680px ] 
+/* > show contact us text in header 
+/* > change anker smaller font size
+
+/* [ >= 1280px  and <= 3500px ] - 21 - 27 Zoll Monitor 
+/* > scaling relation of main index content to not allow to scale bigger & bigger */
+
+/* [ >= 3501px  ] - at 32 Zoll Monitor 
+/* --------------------------------------------------------------------------- */
+
+
+
+/* -------------------------------------------------------- */
+/* >= 460px
+/* -------------------------------------------------------- */
+
+@media (min-width: 460px) {
+
+
+    /* ------------------------------------ */
+    /* Header Index Anker Panel
+    /* ------------------------------------ */
+    
+    /* all link in one line , so no fixed height 
+    /* for every fley item & them we make our anker panel
+    /* height little bit smaller for better relation to the
+    /* header */
+
+    #anker-index-panel { 
+
+        padding-left: calc(.1vw + 1.3em);
+    }
+
+    #anker-index-arrow-panel { display: block;}
+
+    /* flex items height auto */
+    #anker-index-panel a {
+
+        height: auto;
+    }
+ 
+
+}
+
+
+
+
+/* -------------------------------------------------------- */
+/* >= 680px & <= 680px
+/* -------------------------------------------------------- */
+
+@media (min-width: 680px) {
+
+
+    /* show contact title in header */
+    #header-contactus-title { display: block; }
+
+}
+
+@media (max-width: 680px ) {
+
+    #anker-index-panel {
+
+        /* next root font-size */
+        font-size: calc( .1vw + .8em );
+
+    }
+    
+}
+
+
+/* -------------------------------------------------------- */
+/* >= 1280px  and <= 3500px | 21 - 27 Zoll 
+/* -------------------------------------------------------- */
+
+
+/* ---------------------------------------- */
+/* >= 1280px 
+/* ----------------------------------------- */
+@media (min-width: 1280px ) {
+
+    
+    /* -------------------------------------------- */
+    /* Head Container & Header Ankel Panel
+    /* -------------------------------------------- */
+
+    #head-index-header {
+
+        padding-left: calc(.1vw + 2em);
+        padding-right: calc(.1vw + 2em);
+    }
+
+
+
+    #anker-index-panel {
+
+        margin-left: calc(.1vw + 2.3em);
+        margin-right: calc(25vw + 2.3em);
+
+    }
+
+    /* --------------------------------- */
+    /* Main Index Row  &  Section
+    /* --------------------------------- */
+  
+    /* 1st - Main Index Row Container */
+    /* margin-top plus height of anker panel 
+    /* height & margin-top less anker panel */
+
+    #main-index-layout {
+
+        /* minus anker panel height 3.3em */
+        margin-top:  calc( 4.2em + .1vw);
+    }
+
+    #main-index-layout > div:nth-of-type(1) {
+        
+        /* 1st main index row  */
+        padding-top: 3.3em;
+    }
+
+    #main-index-layout > div > section ,
+    footer > div {
+
+        margin-left: calc(.1vw + 2.3em);
+
+    }
+
+
+
+}
+
+
+
+@media (min-width: 1280px ) and (max-width: 3500px ) {
+
+
+    /* -------------------------------------------------  */
+    /* Main Index Row Layout & Footer
+    /* -------------------------------------------------  */
+
+    /* Tipp: CSS Specifity, id overwrite id 
+    /* & tag elemetns should be same to overwrite */
+    /* if we use only > div - way , that its other specifty
+    /* and default set are fixed */
+
+    #main-index-layout > div > section ,
+    footer > div {
+
+        margin-right: calc(25vw + 2.3em);
+
+    }
+
+}
+
+
+/* -------------------------------------------------------- */
+/* >= 2100px | minimal at 27 Zoll 
+/* -------------------------------------------------------- */
+
+@media (min-width: 2100px ) {
+
+    
+    /* ----------------------------------------------*/
+    /* Higher Default Font-Size for better 
+    /* relative content scaling, because 
+    /* bigger screen need higher scale factor 
+    /* ----------------------------------------------*/
+
+    body { 
+
+        font-size: calc( .3vw + 1.4rem);
+    }
+
+  
+
+}
+
+
+/* -------------------------------------------------------- */
+/* >= 3501px | at 32 Zoll 
+/* -------------------------------------------------------- */
+@media (min-width: 3500px ) {
+
+
+    /* ------------------------------------------- */
+    /* at 32 Zoll we need stronger font-size 
+    /* scaling factor as 27 Zoll
+    /* ------------------------------------------- */
+
+     body { 
+
+        font-size: calc( .5vw + 1.5rem);
+    }
+
+    #anker-index-panel {
+
+        margin-right: calc(35vw + 2.3em);
+
+    }
+
+
+    #main-index-layout > div > section ,
+    footer > div {
+
+        margin-right: calc(35vw + 2.3em);
+
+    }
+
+}
